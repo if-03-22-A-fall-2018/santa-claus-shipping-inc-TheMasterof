@@ -1,9 +1,17 @@
 #include <stdlib.h>
 #include "list.h"
 
+struct _list{
+  Node* head;
+};
+
+struct _node{
+  void* data;
+  Node* next;
+};
+
 List* list_create(){
-  List* list;
-  return list;
+  return (List*)malloc(sizeof(List));
 }
 
 void list_delete(List *list){
@@ -19,14 +27,13 @@ void list_insert_after(Node *node, void *data){
 }
 
 Node* list_get_first(List *list){
-Node* node;
-  return node;
+  return list->head;
 }
 
 Node* list_get_next(Node *node){
-  return node;
+  return node->next;
 }
 
 void* list_get_data(Node *node){
-return 0;
+return node->data;
 }
